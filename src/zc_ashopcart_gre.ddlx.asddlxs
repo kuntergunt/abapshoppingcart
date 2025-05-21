@@ -1,0 +1,223 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'OrderUuid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'OrderUuid'
+annotate view ZC_ASHOPCART_GRE with
+{
+  @EndUserText.label: 'OrderUuid'
+  @UI.facet: [ {
+    label: 'Allgemeine Informationen', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'OrderUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'OrderUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  OrderUuid;
+  
+  @EndUserText.label: 'OrderId'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'OrderId'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'OrderId'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  OrderId;
+  
+  @EndUserText.label: 'OrderedItem'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'OrderedItem'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'OrderedItem'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  OrderedItem;
+  
+  @EndUserText.label: 'Price'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Price'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Price'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Price;
+  
+  @EndUserText.label: 'TotalPrice'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'TotalPrice'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'TotalPrice'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  TotalPrice;
+  
+  @EndUserText.label: 'OrderQuantity'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'OrderQuantity'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'OrderQuantity'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  OrderQuantity;
+  
+  @EndUserText.label: 'DeliveryDate'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'DeliveryDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'DeliveryDate'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  DeliveryDate;
+  
+  @EndUserText.label: 'OverallStatus'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'OverallStatus'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'OverallStatus'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  OverallStatus;
+  
+  @EndUserText.label: 'Notes'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Notes'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Notes'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Notes;
+  
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  LastChangedBy;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  LastChangedAt;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  LocalLastChangedAt;
+  
+  @EndUserText.label: 'PurchaseRequisition'
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'PurchaseRequisition'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'PurchaseRequisition'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  PurchaseRequisition;
+  
+  @EndUserText.label: 'PrCreationDate'
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'PrCreationDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'PrCreationDate'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  PrCreationDate;
+}

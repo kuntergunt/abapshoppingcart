@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service-Definition für ZC_ASHOPCART_GRE'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_ASHOPCART_GRE'
+  }
+}
+define service ZUI_ASHOPCART_GRE_O4 provider contracts odata_v4_ui {
+  expose ZC_ASHOPCART_GRE;
+}

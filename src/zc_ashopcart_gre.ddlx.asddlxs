@@ -1,223 +1,174 @@
 @Metadata.layer: #CORE
-@UI.headerInfo.title.type: #STANDARD
-@UI.headerInfo.title.value: 'OrderUuid'
-@UI.headerInfo.description.type: #STANDARD
-@UI.headerInfo.description.value: 'OrderUuid'
+@UI: {
+  headerInfo: {
+    typeName: 'ShoppingCart', 
+    typeNamePlural: 'ShoppingCarts'
+  , title: {
+      type: #STANDARD,
+      label: 'ShoppingCart',
+      value: 'OrderID'
+    }
+  },
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'OrderID',
+      direction: #DESC
+    } ],
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
 annotate view ZC_ASHOPCART_GRE with
 {
-  @EndUserText.label: 'OrderUuid'
   @UI.facet: [ {
-    label: 'Allgemeine Informationen', 
-    id: 'GeneralInfo', 
-    purpose: #STANDARD, 
-    position: 10 , 
-    type: #IDENTIFICATION_REFERENCE
-  } ]
-  @UI.identification: [ {
-    position: 10 , 
-    label: 'OrderUuid'
-  } ]
-  @UI.lineItem: [ {
-    position: 10 , 
-    label: 'OrderUuid'
-  } ]
-  @UI.selectionField: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ShoppingCart', 
     position: 10 
   } ]
+  @UI.hidden: true
   OrderUuid;
-  
-  @EndUserText.label: 'OrderId'
-  @UI.identification: [ {
-    position: 20 , 
-    label: 'OrderId'
-  } ]
+
   @UI.lineItem: [ {
-    position: 20 , 
-    label: 'OrderId'
+    position: 20 ,
+    importance: #HIGH,
+    label: 'OrderID'
+  } ] 
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'OrderID'
   } ]
   @UI.selectionField: [ {
-    position: 20 
+    position: 20
   } ]
   OrderId;
-  
-  @EndUserText.label: 'OrderedItem'
-  @UI.identification: [ {
-    position: 30 , 
-    label: 'OrderedItem'
-  } ]
+  @Consumption.valueHelpDefinition: [{ entity: 
+                {name: 'ZI_PRODUCTS_GRE' , element: 'ProductText' },
+                additionalBinding: [{ localElement: 'price', element: 'Price', usage: #RESULT },
+                                    { localElement: 'currency', element: 'Currency', usage: #RESULT }
+                                                                      ]
+                }]
+
   @UI.lineItem: [ {
-    position: 30 , 
-    label: 'OrderedItem'
+    position: 30 ,
+    importance: #HIGH,
+    label: 'Ordered Item'
+  } ]
+  @UI.identification: [ {
+    position: 30 ,
+    label: 'Ordered Item'
   } ]
   @UI.selectionField: [ {
-    position: 30 
+    position: 30
   } ]
   OrderedItem;
-  
-  @EndUserText.label: 'Price'
-  @UI.identification: [ {
-    position: 40 , 
+
+  @UI.lineItem: [ {
+    position: 40 ,
+    importance: #HIGH,
     label: 'Price'
   } ]
-  @UI.lineItem: [ {
-    position: 40 , 
+  @UI.identification: [ {
+    position: 40 ,
     label: 'Price'
   } ]
   @UI.selectionField: [ {
-    position: 40 
+    position: 40
   } ]
   Price;
-  
-  @EndUserText.label: 'TotalPrice'
-  @UI.identification: [ {
-    position: 50 , 
-    label: 'TotalPrice'
-  } ]
+
   @UI.lineItem: [ {
-    position: 50 , 
-    label: 'TotalPrice'
+    position: 45 ,
+    importance: #HIGH,
+    label: 'Total Price'
+  } ]
+  @UI.identification: [ {
+    position: 45 ,
+    label: 'Total Price'
   } ]
   @UI.selectionField: [ {
-    position: 50 
+    position: 50
   } ]
   TotalPrice;
-  
-  @EndUserText.label: 'OrderQuantity'
-  @UI.identification: [ {
-    position: 60 , 
-    label: 'OrderQuantity'
-  } ]
+  @Consumption.valueHelpDefinition: [ { entity: { name: 'I_Currency', element: 'Currency' } } ]
   @UI.lineItem: [ {
-    position: 60 , 
-    label: 'OrderQuantity'
+    position: 50 ,
+    importance: #HIGH,
+    label: 'currency'
+  } ]
+  @UI.identification: [ {
+    position: 50 ,
+    label: 'Currency'
   } ]
   @UI.selectionField: [ {
-    position: 60 
+    position: 60
+  } ]
+  Currency;
+
+  @UI.lineItem: [ {
+    position: 55 ,
+    importance: #HIGH,
+    label: 'Ordered Quantity'
+  } ]
+  @UI.identification: [ {
+    position: 55 ,
+    label: 'Ordered Quantity'
+  } ]
+  @UI.selectionField: [ {
+    position: 65
   } ]
   OrderQuantity;
-  
-  @EndUserText.label: 'DeliveryDate'
-  @UI.identification: [ {
-    position: 70 , 
-    label: 'DeliveryDate'
-  } ]
+
   @UI.lineItem: [ {
-    position: 70 , 
-    label: 'DeliveryDate'
+    position: 60 ,
+    importance: #HIGH,
+    label: 'Delivery Date'
   } ]
-  @UI.selectionField: [ {
-    position: 70 
+  @UI.identification: [ {
+    position: 60 ,
+    label: 'Delivery Date'
   } ]
   DeliveryDate;
-  
-  @EndUserText.label: 'OverallStatus'
-  @UI.identification: [ {
-    position: 80 , 
-    label: 'OverallStatus'
-  } ]
   @UI.lineItem: [ {
-    position: 80 , 
-    label: 'OverallStatus'
+    position: 65 ,
+    importance: #HIGH,
+    label: 'Overall Status'
   } ]
-  @UI.selectionField: [ {
-    position: 80 
+  @UI.identification: [ {
+    position: 65 ,
+    label: 'Overall Status'
   } ]
   OverallStatus;
-  
-  @EndUserText.label: 'Notes'
+@UI.lineItem: [ {
+    position: 70 ,
+    importance: #HIGH,
+    label: 'Notes'
+  } ]
   @UI.identification: [ {
-    position: 90 , 
+    position: 70 ,
     label: 'Notes'
-  } ]
-  @UI.lineItem: [ {
-    position: 90 , 
-    label: 'Notes'
-  } ]
-  @UI.selectionField: [ {
-    position: 90 
   } ]
   Notes;
-  
-  @UI.identification: [ {
-    position: 100 
-  } ]
-  @UI.lineItem: [ {
-    position: 100 
-  } ]
-  @UI.selectionField: [ {
-    position: 100 
-  } ]
-  CreatedBy;
-  
-  @UI.identification: [ {
-    position: 110 
-  } ]
-  @UI.lineItem: [ {
-    position: 110 
-  } ]
-  @UI.selectionField: [ {
-    position: 110 
-  } ]
-  CreatedAt;
-  
-  @UI.identification: [ {
-    position: 120 
-  } ]
-  @UI.lineItem: [ {
-    position: 120 
-  } ]
-  @UI.selectionField: [ {
-    position: 120 
-  } ]
-  LastChangedBy;
-  
-  @UI.identification: [ {
-    position: 130 
-  } ]
-  @UI.lineItem: [ {
-    position: 130 
-  } ]
-  @UI.selectionField: [ {
-    position: 130 
-  } ]
-  LastChangedAt;
-  
-  @UI.identification: [ {
-    position: 140 
-  } ]
-  @UI.lineItem: [ {
-    position: 140 
-  } ]
-  @UI.selectionField: [ {
-    position: 140 
-  } ]
+
+  @UI.hidden: true
   LocalLastChangedAt;
-  
-  @EndUserText.label: 'PurchaseRequisition'
-  @UI.identification: [ {
-    position: 150 , 
-    label: 'PurchaseRequisition'
-  } ]
+
   @UI.lineItem: [ {
-    position: 150 , 
-    label: 'PurchaseRequisition'
-  } ]
-  @UI.selectionField: [ {
-    position: 150 
-  } ]
+    position: 70 ,
+    label: 'Purchase requisition number',
+    importance: #HIGH
+  }]
   PurchaseRequisition;
-  
-  @EndUserText.label: 'PrCreationDate'
-  @UI.identification: [ {
-    position: 160 , 
-    label: 'PrCreationDate'
-  } ]
+
   @UI.lineItem: [ {
-    position: 160 , 
-    label: 'PrCreationDate'
+    position: 75 ,
+    importance: #HIGH,
+    label: 'PR Creation Date'
   } ]
-  @UI.selectionField: [ {
-    position: 160 
+  @UI.identification: [ {
+    position: 75 ,
+    label: 'PR Creation Date'
   } ]
   PrCreationDate;
 }

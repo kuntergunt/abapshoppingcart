@@ -32,7 +32,12 @@ authorization master( global )
   draft action Discard;
   draft action(features: instance) Edit;
   draft action Resume;
-  draft determine action Prepare;
+  draft determine action Prepare { validation checkOrderedQuantity;  validation checkDeliveryDate;}
+  determination setInitialOrderValues on modify { create; }
+  determination calculateTotalPrice on modify { create; field Price; }
+  validation checkOrderedQuantity on save { create; field OrderQuantity; }
+  validation checkDeliveryDate on save { create; field DeliveryDate; }
+
 
   mapping for ZASHOPCART_GRE
   {
